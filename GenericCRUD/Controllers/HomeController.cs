@@ -26,11 +26,12 @@ namespace GenericCRUD.Controllers
         public IActionResult Index()
         {
             /*Fake Data*/
-            UserAccount _ua = new UserAccount();
-            _ua.Account = "A2456@g.com";
-            _ua.Pwd = "123456";
+            UserAccount _ua = new UserAccount() { Id = 3,Account = "free576002@gmail.com",Pwd="1234"};
+            //_ua.Account = "A2456@g.com";
+            //_ua.Pwd = "123456";
 
-            provider.GetService<IDBAction<DBRepo>>().InsertData(_ua);
+            provider.GetService<IDBAction<DBRepo>>().GetAllData(new UserAccount());
+
 
             /***/
             return View();

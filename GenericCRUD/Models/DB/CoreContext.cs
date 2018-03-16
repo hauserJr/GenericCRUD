@@ -10,14 +10,14 @@ namespace GenericCRUD
     {
         public virtual DbSet<UserAccount> UserAccount { get; set; }
 
-
         public CoreContext(DbContextOptions<CoreContext> options) 
             : base(options)
         {
-            
+           
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+           
             if (!optionsBuilder.IsConfigured)
             {
                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-RNAENQ8\SQLEXPRESS;Initial Catalog=Core;Integrated Security=True");
